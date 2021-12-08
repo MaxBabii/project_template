@@ -34,7 +34,7 @@ pipeline {
             steps {
                 echo " ============== start pushing image =================="
                 sh '''
-                 docker save -o /home/maxym/max.tar c46ac32b8eef
+                 docker save -o /home/maxym/max.tar c46ac32b8eef/toolbox
                  rsync -avz max.tar root@192.168.0.104
                 '''
             }
