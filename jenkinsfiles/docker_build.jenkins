@@ -26,7 +26,7 @@ pipeline {
             steps {
                 echo " ============== start building image =================="
                 dir ('docker/toolbox') {
-                	sh 'docker build -t c46ac32b8eef/toolbox:latest . '
+                	sh 'docker build -t c46ac32b8eef/192.168.0.104:latest . '
                 }
             }
         }
@@ -34,7 +34,7 @@ pipeline {
             steps {
                 echo " ============== start pushing image =================="
                 sh '''
-                docker push c46ac32b8eef/toolbox:latest
+                docker push c46ac32b8eef/192.168.0.104:latest
                 '''
             }
         }
