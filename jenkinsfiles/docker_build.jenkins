@@ -35,7 +35,7 @@ pipeline {
                 echo " ============== start pushing image =================="
                 sh '''
 //                 docker push c46ac32b8eef/192.168.0.104:latest
-                   docker save c46ac32b8eef | bzip2 | ssh root@192.168.0.104 docker load
+                   docker save c46ac32b8eef | bzip2 | pv | ssh root@192.168.0.104 docker load
                 '''
             }
         }
