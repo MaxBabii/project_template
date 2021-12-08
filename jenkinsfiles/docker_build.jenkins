@@ -34,9 +34,8 @@ pipeline {
             steps {
                 echo " ============== start pushing image =================="
                 sh '''
-//                 docker push c46ac32b8eef/192.168.0.104:latest
-                   docker save c46ac32b8eef | bzip2 | \
-   ssh root@192.168.0.104 'bunzip2 | docker load'
+                 docker save -o /home/maxym/max.tar c46ac32b8eef
+                 rsync -avz max.tar root@192.168.0.104
                 '''
             }
         }
